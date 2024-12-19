@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body>
+    <div class="content">
+      <div class="upper-panel">
+        <h1>dashboard-app</h1>
+        <div class="button-toggle">
+          <button id="btnAddCard">Добавить</button>
+          <div class="checkbox-container">
+            <input class="checkbox-input" type="checkbox" id="checkbox2" />
+            <label class="checkbox-label" for="checkbox2">Click&drag</label>
+          </div>
+        </div>
+      </div>
+      <div class="messageContainer"></div>
+      <div class="cards-container"></div>
+    </div>
+    <div id="overlay"></div>
+    <dialog id="addTaskDialog">
+      <form id="addTaskForm">
+        <h1>Добавление записи</h1>
+        <div>
+          <label>Название</label>
+          <input type="text" id="inputForTitle" />
+        </div>
+        <span id="remaining-title">Осталось: </span>
+        <div>
+          <label>Описание</label>
+          <input type="text" id="inputForDescription" />
+        </div>
+        <span id="remaining-description">Осталось: </span>
+        <div class="buttons">
+          <button id="send">Отправить</button>
+          <button id="closeDialog">Отмена</button>
+        </div>
+      </form>
+    </dialog>
+    <script src="js/index.js" type="module"></script>
+  </body>
+</html>

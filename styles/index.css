@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #424242;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  padding-top: 10%;
+  .content {
+    width: 60%;
+    margin: 0 auto;
+    border: 1px solid rgb(0, 255, 166);
+    border-radius: 10px;
+    padding: 20px;
+    .upper-panel {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      .button-toggle {
+        width: 35%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        button {
+          width: 120px;
+          color: #ffffff;
+          background: #424242;
+          border: 1px solid rgb(0, 255, 166);
+          border-radius: 10px;
+          transition: 0.2s;
+        }
+        button:hover {
+          background-color: rgb(0, 255, 166);
+          color: #424242;
+          cursor: pointer;
+        }
+        .checkbox-container {
+          display: flex;
+          align-items: center;
+        }
+
+        .checkbox-input {
+          appearance: none;
+          width: 60px;
+          height: 30px;
+          background: #fe1515;
+          border-radius: 15px;
+          position: relative;
+          cursor: pointer;
+          transition: background 0.3s;
+        }
+
+        .checkbox-input:checked {
+          background: rgb(0, 255, 166);
+        }
+
+        .checkbox-input:checked::before {
+          transform: translateX(30px);
+        }
+
+        .checkbox-input::before {
+          content: "";
+          position: absolute;
+          width: 28px;
+          height: 28px;
+          background: white;
+          border-radius: 50%;
+          top: 1px;
+          left: 1px;
+          transition: transform 0.3s;
+        }
+
+        .checkbox-label {
+          margin-left: 10px;
+          font-size: 16px;
+        }
+      }
+    }
+    .cards-container {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      .card {
+        padding: 10px;
+        width: 49%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        height: 200px;
+        border-radius: 10px;
+        -webkit-box-shadow: 0px 0px 17px 8px rgba(0, 0, 0, 0.34);
+        -moz-box-shadow: 0px 0px 17px 8px rgba(0, 0, 0, 0.34);
+        box-shadow: 0px 0px 17px 8px rgba(0, 0, 0, 0.34);
+        .title-DeleteButton {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          #deleteCardBtn {
+            height: 40px;
+            width: 120px;
+            color: #ffffff;
+            background: #424242;
+            border: 1px solid rgb(255, 49, 49);
+            border-radius: 10px;
+            transition: 0.2s;
+          }
+          #deleteCardBtn:hover {
+            background: #ff3131;
+            cursor: pointer;
+          }
+          #title {
+            font-size: 30px;
+          }
+        }
+        #description {
+          width: 100%;
+        }
+      }
+    }
+  }
+  #addTaskDialog {
+    position: fixed;
+    width: 40%;
+    top: 30%;
+    left: 30%;
+    border-radius: 10px;
+    padding: 10px;
+    z-index: 2;
+    backdrop-filter: blur(20px);
+    background-color: #424242;
+    color: #ffffff;
+    border: 2px solid rgb(0, 255, 166);
+    h1 {
+      text-align: center;
+    }
+    #addTaskForm {
+      width: 60%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      div {
+        display: flex;
+        flex-direction: column;
+        input {
+          height: 40px;
+          border: 1px solid rgb(0, 255, 166);
+          background-color: #424242;
+          color: white;
+          border-radius: 10px;
+        }
+        label {
+          font-weight: bolder;
+        }
+      }
+      .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        button {
+          width: 49%;
+          height: 40px;
+        }
+        #send,
+        #closeDialog {
+          color: white;
+          transition: 0.2s;
+        }
+        #send {
+          background-color: #424242;
+          border: 1px solid rgb(0, 255, 166);
+          border-radius: 10px;
+        }
+        #send:hover {
+          background-color: rgb(0, 255, 166);
+          color: #424242;
+          cursor: pointer;
+        }
+        #closeDialog {
+          background-color: #424242;
+          border: 1px solid rgb(255, 49, 49);
+          border-radius: 10px;
+        }
+        #closeDialog:hover {
+          background-color: rgb(255, 49, 49);
+          color: #ffffff;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  #overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    background: transparent;
+    backdrop-filter: blur(5px);
+    z-index: 1;
+  }
+}
+/* .smallTask {
+  width: 25%;
+}
+.middleTask {
+  width: 50%;
+}
+.largeTask {
+  width: 75%;
+} */
